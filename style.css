@@ -1,0 +1,23 @@
+
+    /* 1. Цвет выбранной строки (самый важный блок) */
+    /* Мы обращаемся к ячейкам (td) внутри строки с классом selected-row */
+    .gridjs-tr.selected-row .gridjs-td {
+        background-color: #45b458 !important; /* Твой зеленый */
+        color: #ffffff !important;           /* Белый текст */
+    }
+
+    /* 2. Чтобы при наведении на уже выбранную строку она оставалась зеленой */
+    .gridjs-tr.selected-row:hover .gridjs-td {
+        background-color: #38a04a !important;
+    }
+
+    /* 3. Обычное поведение (наведение на другие строки) */
+    .gridjs-tr:not(.selected-row):hover .gridjs-td {
+        background-color: #f1f8f3 !important;
+    }
+
+    /* 4. Курсор и плавность */
+    .gridjs-tr {
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }

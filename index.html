@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Складской учет</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; background-color: #f0f2f5; }
+        #wrapper { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+
+        /* --- МАГИЯ ЦВЕТА ТУТ --- */
+        /* Мы принудительно красим ячейки (td) внутри выбранной строки (tr) */
+        .gridjs-tr.selected-row .gridjs-td {
+            background-color: #45b458 !important;
+            color: white !important;
+        }
+
+        /* Убираем стандартную подсветку при наведении для выбранной строки */
+        .gridjs-tr.selected-row:hover .gridjs-td {
+            background-color: #3d9e4e !important;
+        }
+
+        /* Обычная подсветка при наведении для остальных строк */
+        .gridjs-tr:not(.selected-row):hover .gridjs-td {
+            background-color: #f8f9fa !important;
+        }
+
+        .gridjs-tr { cursor: pointer; transition: all 0.2s; }
+    </style>
+</head>
+<body>
+
+    <h2>Инвентаризация склада</h2>
+    <div id="wrapper"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
